@@ -2,6 +2,7 @@ import axios from 'axios';
 import React, { useEffect, useState } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 
+
 const Update = () => {
 const navi = useNavigate()
 const [userData, setUserData] = useState(null);
@@ -9,8 +10,10 @@ const [state,setState]= useState()
 const {_id} = useParams()
 const userId = _id;
 
+
 useEffect(() => {
     const userData = window.localStorage.getItem("user");
+    console.log(userData,"jjj");
     if (userData) {
       setUserData(JSON.parse(userData));
     }
@@ -33,18 +36,18 @@ useEffect(()=>{
 
   return (
     <div>
-      Update 
+
 <div>
 
-  <>
-   <h1>name:</h1> 
-   <h1>email:</h1> 
+<h1>name:</h1>
+<h1>email: </h1>
+
+
+ 
+</div>
 
    <input type="text" placeholder='name' />
    <input type="text" placeholder='email' />
-   </>
-
-</div>
     </div>
   )
 }

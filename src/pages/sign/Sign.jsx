@@ -13,7 +13,7 @@ const handleSbmite = async (e) => {
     try {
       const response = await axios.post("http://localhost:4006/api/create", {
         name:name,
-        email:email,
+        email:email,  
         password:passsword,
       });
       console.log(response);
