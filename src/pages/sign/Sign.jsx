@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import axios from "axios"
+// import { useDispatch } from 'react-redux'
+// import { addUser } from '../redux/reducer'
 
 const Sign = () => {
     const navi = useNavigate()
 const [name,setName]= useState("")
-const [passsword,setPassword]= useState("")
+const [passsword,setPassword]=useState("")
 const [email,setEmail]= useState("")
-
+// const dispatch = useDispatch()
+ 
 const handleSbmite = async (e) => {
     e.preventDefault();
     try {
@@ -18,6 +21,7 @@ const handleSbmite = async (e) => {
       });
       console.log(response);
       if (response.status === 201) {
+        // dispatch(addUser({name:name,email:email}));
         navi("/log");
       }
     } catch (error) {

@@ -1,0 +1,29 @@
+.main {
+    display: flex;
+  }
+  .friendList {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 400px; 
+    margin-left: 290px;
+    background-color: green;
+  }
+  
+
+  .paginationContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 20px;
+    padding: 10px;
+    background-color:yellowgreen;
+  }
+
+  .paginationContainer {
+    margin-left: 120px; 
+  }
+  
+  
