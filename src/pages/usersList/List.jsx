@@ -1,12 +1,14 @@
 import React, { useEffect, useMemo, useState } from 'react';
 import './list.css';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const List = () => {
     const [users, setUsers] = useState([]);
     const [currentPage, setCurrentPage] = useState(1);
     const [search, setSearch] = useState('');
     const [userId, setUserId] = useState(null);
+    const navi = useNavigate()
 
     const usersPerPage = 5;
 
@@ -15,7 +17,6 @@ const List = () => {
         setUserId(user._id);
     }, []);
 
-  
      useEffect(()=>{
         const fetchData = async () => {
             try {
@@ -49,7 +50,8 @@ const List = () => {
             </div>
             <div>
             {currentUsers.map((user, index) => (
-                    <div className="friendList" key={user._id || index} style={{ display: 'flex' }}>
+                    <div className="friendList" key={user._id || index} style={{ display: 'flex' }}
+                    onClick={()=>navi(`/profile/${user._id}`)}>
                  <span className="friendListName">{user?.name}</span>
                     </div>
     
